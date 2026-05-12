@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { useAuth } from "./context/AuthContext"
+import { useBoost } from "./context/BoostContext"
 
 import {
   doc,
@@ -25,13 +25,13 @@ import { addTransaction } from "./lib/transactionService"
 export default function Home() {
 
   const router = useRouter()
-  const { user, loading } = useAuth()
+  const { user, loading } = useAuth() const { boostActive, activateBoost } = useBoost()
 
   const [coins, setCoins] = useState(0)
   const [miningActive, setMiningActive] = useState(false)
 
   const [activeReferrals, setActiveReferrals] = useState(0)
-  const [boost, setBoost] = useState(false)
+  
 
   const [ready, setReady] = useState(false)
 
@@ -124,10 +124,10 @@ referredBy: null,
             )
 
           const rewardPerSecond =
-            getMiningRewardPerSecond(
-              data.activeReferrals || 0,
-              false
-            )
+           getMiningRewardPerSecond(
+  data.activeReferrals || 0,
+  boostActive
+)
 
           let offlineCoins =
             rewardPerSecond *
@@ -593,11 +593,10 @@ const interval = setInterval(async () => {
       }
 
       const reward =
-        getMiningRewardPerSecond(
-          data.activeReferrals || 0,
-          boost
-        )
-
+       getMiningRewardPerSecond(
+  data.activeReferrals || 0,
+  boostActive
+)
       const allowedReward =
         Math.min(
           reward,
@@ -662,16 +661,12 @@ const interval = setInterval(async () => {
   // BOOST
   const watchAd = () => {
 
-    setBoost(true)
+  activateBoost()
 
-    alert(
-      "2x boost activated for 1 hour"
-    )
-
-    setTimeout(() => {
-      setBoost(false)
-    }, 3600000)
-  }
+  alert(
+    "🔥 2x boost activated for 10 minutes"
+  )
+}
 
   // LOADING
   if (loading || !ready) {
