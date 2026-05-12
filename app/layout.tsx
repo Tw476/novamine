@@ -29,16 +29,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      
-      {/* ✅ MONEY TAG / MULTI TAG SCRIPT */}
-      <Script
-        src="https://quge5.com/88/tag.min.js"
-        strategy="afterInteractive"
-        data-zone="238771"
-        data-cfasync="false"
-      />
-
       <body className="min-h-full flex flex-col bg-black text-white">
+
+        {/* ✅ MONEY TAG / MULTI TAG SCRIPT */}
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          strategy="afterInteractive"
+          data-zone="238771"
+          data-cfasync="false"
+        />
+
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
