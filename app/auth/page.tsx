@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, useState, useEffect } from "react"
+import { Suspense, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 
 import {
@@ -18,7 +18,7 @@ import {
 import { db } from "../lib/firebase"
 import { generateReferralCode } from "../lib/referral"
 
-export default function AuthPage() {
+function AuthContent() {
 
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -121,6 +121,7 @@ export default function AuthPage() {
 
         <button
           onClick={signup}
+          disabled={loading}
           className="w-full bg-green-500 text-black font-bold p-3 rounded-xl mb-3"
         >
           Create Account
@@ -128,6 +129,7 @@ export default function AuthPage() {
 
         <button
           onClick={login}
+          disabled={loading}
           className="w-full bg-blue-500 font-bold p-3 rounded-xl"
         >
           Login
@@ -141,5 +143,14 @@ export default function AuthPage() {
 
       </div>
     </main>
+  )
+}
+
+export default function AuthPage() {
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthContent />
+    </Suspense>
   )
 }
