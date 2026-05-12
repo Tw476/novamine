@@ -34,7 +34,7 @@ export default function RootLayout({
       <Script
         src="https://quge5.com/88/tag.min.js"
         strategy="afterInteractive"
-        data-zone="10998706"
+        data-zone="238771"
         data-cfasync="false"
       />
 
