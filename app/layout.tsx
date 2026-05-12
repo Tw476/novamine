@@ -25,13 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
       
-      {/* ADS SCRIPT (Direct tag) */}
+      {/* ✅ MONEY TAG / MULTI TAG SCRIPT */}
       <Script
         src="https://quge5.com/88/tag.min.js"
         strategy="afterInteractive"
-        data-zone="238765"
+        data-zone="238771"
         data-cfasync="false"
       />
 
