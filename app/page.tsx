@@ -791,7 +791,7 @@ const interval = setInterval(async () => {
       {(
         getMiningRewardPerSecond(
           activeReferrals,
-          boost
+          boostActive
         ) * 60
       ).toFixed(8)}
       {" "}
