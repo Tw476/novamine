@@ -33,12 +33,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-black text-white">
 
         {/* MONEY TAG / MULTI TAG SCRIPT */}
-        <Script
-          src="https://quge5.com/88/tag.min.js"
-          strategy="afterInteractive"
-          data-zone="238771"
-          data-cfasync="false"
-        />
 
         <AuthProvider>
           <BoostProvider>
