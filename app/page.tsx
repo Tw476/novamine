@@ -1,6 +1,5 @@
 "use client"
 
-import { showRewardedAd } from "./lib/rewardedAd"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "./context/AuthContext"
@@ -667,17 +666,13 @@ const interval = setInterval(async () => {
   }, [miningActive, boostActive, user])
 
   // BOOST
-const watchAd = async () => {
-
-  const watched = await showRewardedAd()
-
-  if (!watched) return
+  const watchAd = () => {
 
   activateBoost()
 
-  alert("🔥 2x Boost unlocked after ad")
-}
-  
+  alert(
+    "🔥 2x boost activated for 10 minutes"
+  )
 }
 
   // LOADING
