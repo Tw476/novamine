@@ -663,7 +663,7 @@ const interval = setInterval(async () => {
 
     return () => clearInterval(interval)
 
-  }, [miningActive, boost, user])
+  }, [miningActive, boostActive, user])
 
   // BOOST
   const watchAd = () => {
