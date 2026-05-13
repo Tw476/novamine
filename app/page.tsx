@@ -666,13 +666,22 @@ const interval = setInterval(async () => {
   }, [miningActive, boostActive, user])
 
   // BOOST
-  const watchAd = () => {
+ const watchAd = () => {
 
-  activateBoost()
-
-  alert(
-    "🔥 2x boost activated for 10 minutes"
+  window.open(
+    "https://omg10.com/4/10999375",
+    "_blank"
   )
+
+  setTimeout(() => {
+
+    activateBoost()
+
+    alert(
+      "🔥 2x boost activated for 10 minutes"
+    )
+
+  }, 8000)
 }
 
   // LOADING
