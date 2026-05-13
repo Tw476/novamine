@@ -25,8 +25,13 @@ import { addTransaction } from "./lib/transactionService"
 export default function Home() {
 
   const router = useRouter()
-  const { user, loading } = useAuth() const { boostActive, activateBoost } = useBoost()
+const { user, loading } = useAuth()
 
+const {
+  boostActive,
+  activateBoost
+} = useBoost()
+  
   const [coins, setCoins] = useState(0)
   const [miningActive, setMiningActive] = useState(false)
 
