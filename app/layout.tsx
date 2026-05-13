@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
+import { BoostProvider } from "./context/BoostContext";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -31,7 +32,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-black text-white">
 
-        {/* ✅ MONEY TAG / MULTI TAG SCRIPT */}
+        {/* MONEY TAG / MULTI TAG SCRIPT */}
         <Script
           src="https://quge5.com/88/tag.min.js"
           strategy="afterInteractive"
@@ -39,7 +40,12 @@ export default function RootLayout({
           data-cfasync="false"
         />
 
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <BoostProvider>
+            {children}
+          </BoostProvider>
+        </AuthProvider>
+
       </body>
     </html>
   );
