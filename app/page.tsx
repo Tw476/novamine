@@ -666,13 +666,17 @@ const interval = setInterval(async () => {
   }, [miningActive, boostActive, user])
 
   // BOOST
-  const watchAd = () => {
+const watchAd = () => {
+  // Open ad in new tab
+  window.open("YOUR_AD_LINK_HERE", "_blank")
 
-  activateBoost()
-
-  alert(
-    "🔥 2x boost activated for 10 minutes"
-  )
+  // simulate reward after delay
+  setTimeout(() => {
+    activateBoost()
+    alert("🔥 Boost earned from ad view!")
+  }, 8000)
+}
+  
 }
 
   // LOADING
